@@ -1,13 +1,13 @@
 
 module.exports = {
 
-  addItem: (scope, text, isLeaf, parentNode) => {
+  addItem: (scope, text, isLeaf, parentNode, id) => {
     const parent = parentNode || scope.state.selectedItem || scope.state.rootItem;
     if (!parent) {
       throw new Error('You must specify a parent node!');
     }
     const newItem = {
-      id: 10,
+      id: id,
       text: text,
       children: [],
       isLeaf: isLeaf,

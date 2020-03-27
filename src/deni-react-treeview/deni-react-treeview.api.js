@@ -8,8 +8,8 @@ module.exports = (scope) => {
     //
     //
     //
-    addItem: (text, isLeaf, parentNode) => {
-      return treeviewApiImpl.addItem(scope, text, isLeaf, parentNode);
+    addItem: (text, isLeaf, parentNode, id) => {
+      return treeviewApiImpl.addItem(scope, text, isLeaf, parentNode, id);
     },
 
     //

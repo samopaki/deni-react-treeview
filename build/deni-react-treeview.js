@@ -4787,8 +4787,8 @@ module.exports = function (scope) {
     //
     //
     //
-    addItem: function addItem(text, isLeaf, parentNode) {
-      return _deniReactTreeviewApi2.default.addItem(scope, text, isLeaf, parentNode);
+    addItem: function addItem(text, isLeaf, parentNode, id) {
+      return _deniReactTreeviewApi2.default.addItem(scope, text, isLeaf, parentNode, id);
     },
 
     //
@@ -4902,13 +4902,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 module.exports = {
 
-  addItem: function addItem(scope, text, isLeaf, parentNode) {
+  addItem: function addItem(scope, text, isLeaf, parentNode, id) {
     var parent = parentNode || scope.state.selectedItem || scope.state.rootItem;
     if (!parent) {
       throw new Error('You must specify a parent node!');
     }
     var newItem = {
-      id: 10,
+      id: id,
       text: text,
       children: [],
       isLeaf: isLeaf
