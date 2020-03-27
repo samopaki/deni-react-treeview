@@ -7,6 +7,7 @@ module.exports = {
       throw new Error('You must specify a parent node!');
     }
     const newItem = {
+      id: 10,
       text: text,
       children: [],
       isLeaf: isLeaf,
