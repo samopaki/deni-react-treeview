@@ -24,7 +24,6 @@ module.exports = {
         showRoot: PropTypes.bool,
         theme: PropTypes.string,
         url: PropTypes.string,
-        disabledAddItemIfIsLeaf: PropTypes.string,
     },
 
     defaultProps: {
@@ -36,6 +35,5 @@ module.exports = {
         showIcon: true,
         showRoot: false,
         theme: 'classic',
-        disabledAddItemIfIsLeaf: false,
     },
 }

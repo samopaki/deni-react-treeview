@@ -1892,7 +1892,6 @@ var DeniReactTreeViewItem = function (_React$Component) {
       var item = this.props.item;
       var level = this.props.level;
       var selectRow = treeview.props.selectRow;
-      var disableAddOption = treeview.props.disabledAddItemIfIsLeaf;
 
       var marginLeft = 5;
       var marginLeftItems = level === 0 ? 0 : treeview.props.showRoot ? level * treeview.props.marginItems : (level - 1) * treeview.props.marginItems;
@@ -1918,7 +1917,7 @@ var DeniReactTreeViewItem = function (_React$Component) {
             _react2.default.createElement(
               'span',
               { className: 'text-inner' },
-              _deniReactTreeviewItem2.default.getInnerText(treeview, item, disableAddOption)
+              _deniReactTreeviewItem2.default.getInnerText(treeview, item)
             )
           )
         )
@@ -2093,9 +2092,9 @@ module.exports = {
 
         return classNames.join(' ');
     },
-    getInnerText: function getInnerText(treeview, item, disableAddOption) {
+    getInnerText: function getInnerText(treeview, item) {
         if (treeview.props.actionButtons) {
-            return _react2.default.createElement(_actionButtons2.default, { disableAddOption: disableAddOption, item: item, buttons: treeview.props.actionButtons, onActionButtonClick: treeview.props.onActionButtonClick.bind(this) });
+            return _react2.default.createElement(_actionButtons2.default, { item: item, buttons: treeview.props.actionButtons, onActionButtonClick: treeview.props.onActionButtonClick.bind(this) });
         } else {
             if (treeview.props.onRenderItem) {
                 return treeview.props.onRenderItem(item, treeview);
@@ -2398,16 +2397,13 @@ var ActionButtons = function (_React$Component) {
       var _this2 = this;
 
       var actionButtons = [];
-      this.props.buttons.map(function (actionButton, index, disableAddOption) {
-        console.log('disableAddOption', _this2.props.disableAddOption);
-        console.log('item', _this2.props.item);
-        if (!_this2.props.disableAddOption && !_this2.props.item.isLeaf) {
-          actionButtons.push(_react2.default.createElement(
-            'span',
-            { key: index, className: 'action-button', onClick: _this2.props.onActionButtonClick.bind(_this2, _this2.props.item, actionButton) },
-            actionButton
-          ));
-        }
+      this.props.buttons.map(function (actionButton, index) {
+        console.log('actionButton', actionButton);
+        actionButtons.push(_react2.default.createElement(
+          'span',
+          { key: index, className: 'action-button', onClick: _this2.props.onActionButtonClick.bind(_this2, _this2.props.item, actionButton) },
+          actionButton
+        ));
       });
 
       return _react2.default.createElement(
@@ -3893,8 +3889,7 @@ module.exports = {
         showIcon: _propTypes2.default.bool,
         showRoot: _propTypes2.default.bool,
         theme: _propTypes2.default.string,
-        url: _propTypes2.default.string,
-        disabledAddItemIfIsLeaf: _propTypes2.default.string
+        url: _propTypes2.default.string
     },
 
     defaultProps: {
@@ -3905,8 +3900,7 @@ module.exports = {
         showCheckbox: false,
         showIcon: true,
         showRoot: false,
-        theme: 'classic',
-        disabledAddItemIfIsLeaf: false
+        theme: 'classic'
     }
 };
 
