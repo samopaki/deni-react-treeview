@@ -1892,6 +1892,7 @@ var DeniReactTreeViewItem = function (_React$Component) {
       var item = this.props.item;
       var level = this.props.level;
       var selectRow = treeview.props.selectRow;
+      console.log('treeview', treeview);
 
       var marginLeft = 5;
       var marginLeftItems = level === 0 ? 0 : treeview.props.showRoot ? level * treeview.props.marginItems : (level - 1) * treeview.props.marginItems;
@@ -3888,7 +3889,8 @@ module.exports = {
         showIcon: _propTypes2.default.bool,
         showRoot: _propTypes2.default.bool,
         theme: _propTypes2.default.string,
-        url: _propTypes2.default.string
+        url: _propTypes2.default.string,
+        disabledAddItemIfIsLeaf: _propTypes2.default.string
     },
 
     defaultProps: {
@@ -3899,7 +3901,8 @@ module.exports = {
         showCheckbox: false,
         showIcon: true,
         showRoot: false,
-        theme: 'classic'
+        theme: 'classic',
+        disabledAddItemIfIsLeaf: false
     }
 };
 

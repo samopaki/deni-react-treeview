@@ -15,6 +15,7 @@ class DeniReactTreeViewItem extends React.Component {
     let item = this.props.item;
     let level = this.props.level;
     let selectRow = treeview.props.selectRow;
+    console.log('treeview',treeview);
 
     let marginLeft = 5;
     let marginLeftItems = level === 0 ? 0 : (treeview.props.showRoot ? level * treeview.props.marginItems : (level - 1) * treeview.props.marginItems);
