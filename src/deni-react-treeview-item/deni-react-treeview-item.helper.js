@@ -102,10 +102,10 @@ module.exports = {
         return classNames.join(' ');
     },
 
-    getInnerText(treeview, item) {
+    getInnerText(treeview, item, disableAddOption) {
         if (treeview.props.actionButtons) {
             return (
-                <ActionButtons item={item} buttons={treeview.props.actionButtons} onActionButtonClick={treeview.props.onActionButtonClick.bind(this)} />
+                <ActionButtons disableAddOption={disableAddOption} item={item} buttons={treeview.props.actionButtons} onActionButtonClick={treeview.props.onActionButtonClick.bind(this)} />
             )
         } else {
             if (treeview.props.onRenderItem) {
