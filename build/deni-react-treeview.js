@@ -2399,7 +2399,7 @@ var ActionButtons = function (_React$Component) {
       var actionButtons = [];
       this.props.buttons.map(function (actionButton, index) {
         console.log('actionButton', actionButton);
-        if (!actionButton.props.disabledOnLeaf && !_this2.props.item.isLeaf) {
+        if (!(actionButton.props.disabledOnLeaf && _this2.props.item.isLeaf)) {
           actionButtons.push(_react2.default.createElement(
             'span',
             { key: index, className: 'action-button', onClick: _this2.props.onActionButtonClick.bind(_this2, _this2.props.item, actionButton) },
