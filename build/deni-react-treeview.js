@@ -2398,8 +2398,6 @@ var ActionButtons = function (_React$Component) {
 
       var actionButtons = [];
       this.props.buttons.map(function (actionButton, index) {
-        console.log("index", index);
-        console.log("actionButton", actionButton);
         actionButtons.push(_react2.default.createElement(
           'span',
           { key: index, className: 'action-button', onClick: _this2.props.onActionButtonClick.bind(_this2, _this2.props.item, actionButton) },

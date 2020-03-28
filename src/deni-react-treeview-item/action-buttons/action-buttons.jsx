@@ -11,8 +11,6 @@ class ActionButtons extends React.Component {
 
     let actionButtons = [];
     this.props.buttons.map((actionButton, index) => {
-      console.log("index",index)
-      console.log("actionButton",actionButton)
       actionButtons.push((
         <span key={ index } className="action-button" onClick={this.props.onActionButtonClick.bind(this, this.props.item, actionButton)} >
           { actionButton }
