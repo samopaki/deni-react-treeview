@@ -10,7 +10,7 @@ class ActionButtons extends React.Component {
   render() {
 
     let actionButtons = [];
-    this.props.buttons.map((actionButton, index) => {
+    this.props.buttons.map((actionButton, index, disableAddOption) => {
       console.log('disableAddOption',disableAddOption);
       console.log('item',item);
       if(!disableAddOption && !item.isLeaf) {
