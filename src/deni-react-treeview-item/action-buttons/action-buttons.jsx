@@ -13,13 +13,19 @@ class ActionButtons extends React.Component {
     this.props.buttons.map((actionButton, index) => {
 
       console.log('actionButton.props', actionButton.props)
-      // if(!(actionButton.props.disabledOnLeaf && this.props.item.isLeaf)) {
+      if(!(actionButton.props['disabled-on-leaf'] === 'true' && this.props.item.isLeaf)) {
         actionButtons.push((
           <span key={ index } className="action-button" onClick={this.props.onActionButtonClick.bind(this, this.props.item, actionButton)} >
             { actionButton }
           </span>
         ));
-      // }
+      } else if(actionButton.props['disabled-on-folder'] === 'true' && this.props.item.isLeaf) {
+        actionButtons.push((
+          <span key={ index } className="action-button" onClick={this.props.onActionButtonClick.bind(this, this.props.item, actionButton)} >
+            { actionButton }
+          </span>
+        ));
+      }
     })
 
     return (
