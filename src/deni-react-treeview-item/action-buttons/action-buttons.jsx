@@ -12,8 +12,7 @@ class ActionButtons extends React.Component {
     let actionButtons = [];
     this.props.buttons.map((actionButton, index) => {
       if(this.props.item.isLeaf) {
-        console.log('is leaf',this.props.item.text + " disabled: " +actionButton.props['disabled-on-leaf']);
-        if(!actionButton.props['disabled-on-leaf'] === 'true' ) {
+        if(!(actionButton.props['disabled-on-leaf'] === 'true')) {
           actionButtons.push((
             <span key={ index } className="action-button" onClick={this.props.onActionButtonClick.bind(this, this.props.item, actionButton)} >
               { actionButton }
@@ -21,13 +20,13 @@ class ActionButtons extends React.Component {
           ));
         }
       } else {
-        // if(!actionButton.props['disabled-on-folder'] === 'true') {
-          // actionButtons.push((
-          //   <span key={ index } className="action-button" onClick={this.props.onActionButtonClick.bind(this, this.props.item, actionButton)} >
-          //     { actionButton }
-          //   </span>
-          // ));
-        // }
+        if(!(actionButton.props['disabled-on-folder'] === 'true')) {
+          actionButtons.push((
+            <span key={ index } className="action-button" onClick={this.props.onActionButtonClick.bind(this, this.props.item, actionButton)} >
+              { actionButton }
+            </span>
+          ));
+        }
       }
     })
     return (
