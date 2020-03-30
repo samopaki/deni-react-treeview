@@ -2399,21 +2399,21 @@ var ActionButtons = function (_React$Component) {
       var actionButtons = [];
       this.props.buttons.map(function (actionButton, index) {
         if (_this2.props.item.isLeaf) {
-          if (!actionButton.props['disabled-on-leaf'] === 'true') {
-            actionButtons.push(_react2.default.createElement(
-              'span',
-              { key: index, className: 'action-button', onClick: _this2.props.onActionButtonClick.bind(_this2, _this2.props.item, actionButton) },
-              actionButton
-            ));
-          }
+          // if(!actionButton.props['disabled-on-leaf'] === 'true' ) {
+          actionButtons.push(_react2.default.createElement(
+            'span',
+            { key: index, className: 'action-button', onClick: _this2.props.onActionButtonClick.bind(_this2, _this2.props.item, actionButton) },
+            actionButton
+          ));
+          // }
         } else {
-          if (!actionButton.props['disabled-on-folder'] === 'true') {
-            actionButtons.push(_react2.default.createElement(
-              'span',
-              { key: index, className: 'action-button', onClick: _this2.props.onActionButtonClick.bind(_this2, _this2.props.item, actionButton) },
-              actionButton
-            ));
-          }
+          // if(!actionButton.props['disabled-on-folder'] === 'true') {
+          actionButtons.push(_react2.default.createElement(
+            'span',
+            { key: index, className: 'action-button', onClick: _this2.props.onActionButtonClick.bind(_this2, _this2.props.item, actionButton) },
+            actionButton
+          ));
+          // }
         }
       });
       return _react2.default.createElement(

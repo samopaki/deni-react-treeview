@@ -12,21 +12,21 @@ class ActionButtons extends React.Component {
     let actionButtons = [];
     this.props.buttons.map((actionButton, index) => {
       if(this.props.item.isLeaf) {
-        if(!actionButton.props['disabled-on-leaf'] === 'true' ) {
+        // if(!actionButton.props['disabled-on-leaf'] === 'true' ) {
           actionButtons.push((
             <span key={ index } className="action-button" onClick={this.props.onActionButtonClick.bind(this, this.props.item, actionButton)} >
               { actionButton }
             </span>
           ));
-        }
+        // }
       } else {
-        if(!actionButton.props['disabled-on-folder'] === 'true') {
+        // if(!actionButton.props['disabled-on-folder'] === 'true') {
           actionButtons.push((
             <span key={ index } className="action-button" onClick={this.props.onActionButtonClick.bind(this, this.props.item, actionButton)} >
               { actionButton }
             </span>
           ));
-        }
+        // }
       }
     })
     return (
